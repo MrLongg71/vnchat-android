@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/color_dark"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".src.module.sign_up.view.SignUpActivity">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_SignIn"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
+            app:title="@string/sign_up"
+            app:titleTextColor="@color/color_white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin15"
+            android:text="@string/description_sign_up"
+            android:theme="@style/TextView" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edtNameSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin10"
+        android:background="@drawable/custom_edittext"
+        android:hint="@string/name"
+        android:paddingStart="@dimen/margin10"
+        android:textColorHint="@color/color_white"
+        tools:ignore="RtlSymmetry" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtPhoneSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin10"
+            android:background="@drawable/custom_edittext"
+            android:hint="@string/phone"
+            android:paddingStart="@dimen/margin10"
+            android:textColorHint="@color/color_white"
+            tools:ignore="RtlSymmetry" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtPasswordSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin10"
+            android:background="@drawable/custom_edittext"
+            android:hint="@string/password"
+            android:paddingStart="@dimen/margin10"
+            android:textColorHint="@color/color_white"
+            tools:ignore="RtlSymmetry" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnFloatSingIn"
+            android:background="@color/color_blue"
+            android:layout_margin="@dimen/margin15"
+            android:layout_gravity="right"
+            app:fabSize="normal"
+            android:padding="@dimen/margin10"
+            android:src="@drawable/ic_arrow_forward_black_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="RtlHardcoded" />
+
+    </LinearLayout>
+

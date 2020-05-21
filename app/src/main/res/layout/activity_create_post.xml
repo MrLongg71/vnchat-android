@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_dark"
+        android:orientation="vertical"
+        tools:context=".src.module.posts.view.CreatePostActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_marginTop="@dimen/margin15">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/action_back_create_post"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_arrow_back_black_24dp" />
+
+                <TextView
+                    android:id="@+id/limits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin15"
+                    android:layout_toEndOf="@+id/action_back_create_post"
+                    android:drawableStart="@drawable/ic_people"
+                    android:drawableEnd="@drawable/ic_arrow_drop_down"
+                    android:drawablePadding="@dimen/margin5"
+                    android:text="@string/limits_public"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/text20" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/margin15"
+                    android:text="@string/create_post"
+                    android:textSize="@dimen/text20"
+                    android:textColor="@color/color_blue"
+                    android:textStyle="bold"
+                    tools:ignore="RelativeOverlap" />
+
+            </RelativeLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <EditText
+            android:id="@+id/edtContentPost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="top"
+            android:textColor="@color/color_white"
+            android:hint="@string/what_do_you_think"
+            android:lines="20"
+            android:maxLines="25"
+            android:minLines="15"
+            android:padding="@dimen/margin15"
+            android:textColorHint="@color/color_white"
+            tools:ignore="LabelFor,TextFields" />
+
+    </LinearLayout>
+
+    <include layout="@layout/custom_bottom_sheet_add_details_post" />
+    <include layout="@layout/custom_bottom_sheet_change_limits_post"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

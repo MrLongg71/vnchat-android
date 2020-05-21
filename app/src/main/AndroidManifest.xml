@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="vn.mrlongg71.vnchat">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:name=".src.application.MyApplication"
+        android:theme="@style/AppTheme">
+        <activity android:name=".src.module.posts.view.CreatePostActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden">
+
+
+        </activity>
+        <activity android:name=".src.module.profile.view.ProfileActivity" android:theme="@style/AppTheme.TransparentTheme">
+
+        </activity>
+        <activity android:name=".src.ui.BottomNavigationActivity"></activity>
+        <activity android:name=".src.module.sign_up.view.SignUpActivity" />
+        <activity android:name=".src.module.sign_in.view.SignInActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".src.ui.SplashScreenActivity" />
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

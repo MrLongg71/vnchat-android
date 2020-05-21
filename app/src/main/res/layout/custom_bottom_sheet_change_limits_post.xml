@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_limits"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_dark"
+    android:orientation="vertical"
+    android:padding="16dp"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="10dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+
+    <TextView
+        style="@style/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="6"
+        android:text="@string/limits"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/text15" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin15">
+
+        <RadioButton
+            style="@style/TextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10"
+            android:drawableStart="@drawable/ic_people"
+            android:drawablePadding="@dimen/margin10"
+            android:padding="@dimen/margin5"
+            android:text="@string/limits_public" />
+
+        <RadioButton
+            style="@style/TextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10"
+            android:drawableStart="@drawable/ic_people"
+            android:drawablePadding="@dimen/margin10"
+            android:padding="@dimen/margin5"
+            android:text="@string/limits_public" />
+
+        <RadioButton
+            style="@style/TextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10"
+            android:drawableStart="@drawable/ic_people"
+            android:drawablePadding="@dimen/margin10"
+            android:padding="@dimen/margin5"
+            android:layout_marginBottom="@dimen/margin55"
+            android:text="@string/limits_public" />
+
+    </RadioGroup>
+
+</LinearLayout>
