@@ -15,7 +15,6 @@ import vn.mrlongg71.vnchat.src.ui.BottomNavigationActivity
 
 class SignInActivity : AppCompatActivity() {
 
-    //  private var signInViewModel: SignInViewModel? = null
     private var email: String? = null
     private var password: String? = null
     private val signInViewModel: SignInViewModel by viewModel()
@@ -25,20 +24,18 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        btnFloatSingIn.setOnClickListener {
-            email = edtPhoneSignIn.text.toString()
-            password = edtPasswordSignIn.text.toString()
-            signInViewModel.handlerSignIn(email!!, password!!).observe(this, Observer {
-                if (it.statusCode == 200) {
-                    Toasty.success(this, it.message, Toast.LENGTH_LONG).show()
-                    val intent = Intent(this, BottomNavigationActivity::class.java)
-                    startActivity(intent)
-                } else {
-                    Toasty.error(this, it.message, Toast.LENGTH_LONG).show()
-                }
-            })
 
+        listenerProgress()
+        handlerSignIn()
+
+        toolbar_SignIn.setNavigationOnClickListener {
+            finish()
         }
+
+
+    }
+
+    private fun listenerProgress() {
         signInViewModel.isLoading.observe(this, Observer {
             if (it) {
                 progressSignIn.visibility = (View.VISIBLE)
@@ -47,8 +44,26 @@ class SignInActivity : AppCompatActivity() {
 
             }
         })
+    }
 
+    private fun handlerSignIn() {
+        btnFloatSingIn.setOnClickListener {
+            email = edtPhoneSignIn.text.toString()
+            password = edtPasswordSignIn.text.toString()
+            signInViewModel.handlerSignIn(email!!, password!!).observe(this, Observer {
+                if (it.statusCode == 200) {
 
+                    Toasty.success(this, it.message, Toast.LENGTH_LONG).show()
+                    val intent = Intent(this, BottomNavigationActivity::class.java)
+                    startActivity(intent)
+                    finish()
+
+                } else {
+                    Toasty.error(this, it.message, Toast.LENGTH_LONG).show()
+                }
+            })
+
+        }
     }
 
 

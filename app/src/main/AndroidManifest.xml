@@ -23,13 +23,15 @@
         <activity android:name=".src.ui.BottomNavigationActivity"></activity>
         <activity android:name=".src.module.sign_up.view.SignUpActivity" />
         <activity android:name=".src.module.sign_in.view.SignInActivity">
+
+
+        </activity>
+        <activity android:name=".src.ui.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".src.ui.SplashScreenActivity" />
         <activity android:name=".MainActivity" />
     </application>
 

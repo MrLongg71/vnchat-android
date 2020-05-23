@@ -1,21 +1,24 @@
 package vn.mrlongg71.vnchat.src.network
 
-import android.util.Log
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import vn.mrlongg71.vnchat.src.data.repository.posts.PostsRepository
 import vn.mrlongg71.vnchat.src.data.repository.user.SignInRepository
+import vn.mrlongg71.vnchat.src.module.posts.viewmodel.PostsViewModel
 import vn.mrlongg71.vnchat.src.module.sign_in.viewmodel.SignInViewModel
 
 val viewModelModule = module {
     viewModel {
         SignInViewModel(get())
+    }
+    viewModel {
+        PostsViewModel(get())
     }
 }
 
@@ -23,9 +26,13 @@ val repositoryModule = module {
     single {
         SignInRepository(get())
     }
+    single {
+        PostsRepository(get())
+    }
+
 }
 
-object APIVnChat val apiModule = module {
+val apiModule = module {
     fun provideUseApi(retrofit: Retrofit): IAPIVnChat {
         return retrofit.create(IAPIVnChat::class.java)
     }
@@ -57,7 +64,7 @@ val retrofitModule = module {
 
     fun provideRetrofit(factory: Gson, client: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://192.168.1.6/vnchat-backend-php/server/api/")
+            .baseUrl("http://192.168.1.8/vnchat-backend-php/server/api/")
             .addConverterFactory(GsonConverterFactory.create(factory))
             .client(client)
             .build()

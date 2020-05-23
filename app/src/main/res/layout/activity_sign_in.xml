@@ -28,6 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin10"
+        android:text="mrlongg71@gmail.com"
         android:background="@drawable/custom_edittext"
         android:hint="@string/phone"
         android:paddingStart="@dimen/margin10"
@@ -39,6 +40,7 @@
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/edtPasswordSignIn"
         android:layout_width="match_parent"
+        android:text="123456"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin10"
         android:background="@drawable/custom_edittext"
@@ -62,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:layout_margin="@dimen/margin15"
-        android:background="@color/color_blue"
+        android:backgroundTint="@color/color_blue"
         android:padding="@dimen/margin10"
         android:src="@drawable/ic_arrow_forward_black_24dp"
         app:fabSize="normal" />

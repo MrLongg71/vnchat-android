@@ -59,6 +59,7 @@
         android:padding="@dimen/margin10">
 
         <TextView
+            android:id="@+id/txtDescImageTwo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Trang thai"
@@ -66,12 +67,34 @@
             android:textSize="@dimen/text20" />
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="200dp"
+            android:layout_marginTop="@dimen/margin15"
+            android:orientation="horizontal"
+            android:weightSum="10">
 
+            <ImageView
+                android:id="@+id/img1ImageTwo"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_weight="5"
+                android:contentDescription="Image One Posts"
+                android:scaleType="centerCrop"
+                android:src="@drawable/test"
+                tools:ignore="HardcodedText" />
 
+            <ImageView
+                android:id="@+id/img2ImageTwo"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="@dimen/margin5"
+                android:layout_weight="5"
+                android:contentDescription="Image One Posts"
+                android:scaleType="centerCrop"
+                android:src="@drawable/test"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -79,19 +102,19 @@
             android:background="@color/color_gray2" />
 
         <LinearLayout
-            android:layout_marginTop="@dimen/margin10"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/btnLikePost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin10"
                 android:drawableStart="@drawable/ic_message"
                 android:drawablePadding="@dimen/margin10"
                 android:text="3"
-                android:layout_marginStart="@dimen/margin10"
                 android:textColor="@color/color_white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -100,10 +123,10 @@
                 android:id="@+id/btnCommentPost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin35"
                 android:drawableStart="@drawable/ic_message"
                 android:drawablePadding="@dimen/margin10"
                 android:text="3"
-                android:layout_marginStart="@dimen/margin35"
                 android:textColor="@color/color_white"
                 app:layout_constraintStart_toEndOf="@+id/btnLikePost"
                 tools:ignore="MissingConstraints"

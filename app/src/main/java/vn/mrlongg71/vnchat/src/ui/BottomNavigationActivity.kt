@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.ViewGroup
-import android.view.Window
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -28,19 +25,19 @@ class BottomNavigationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bottom_navigation)
-        val window: Window = getWindow()
-
-
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-
-
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-
-
-        window.statusBarColor = ContextCompat.getColor(applicationContext, R.color.color_dark)
+//        val window: Window = getWindow()
+//
+//
+//        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+//
+//
+//        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+//
+//
+//        window.statusBarColor = ContextCompat.getColor(applicationContext, R.color.color_dark)
 
         viewPager = findViewById(R.id.viewNavigation)
-        var navigation: BottomNavigationView = findViewById(R.id.navigation)
+        val navigation: BottomNavigationView = findViewById(R.id.navigation)
 
 
         navigation.setOnNavigationItemSelectedListener(
@@ -86,7 +83,7 @@ class BottomNavigationActivity : AppCompatActivity() {
     }
 
     private val mOnNavigationItemSelectedListener =
-        label@ BottomNavigationView.OnNavigationItemSelectedListener { item: MenuItem ->
+        BottomNavigationView.OnNavigationItemSelectedListener { item: MenuItem ->
             when (item.itemId) {
                 R.id.navigation_explore -> {
                     viewPager.currentItem = 0
@@ -96,7 +93,6 @@ class BottomNavigationActivity : AppCompatActivity() {
 
                 }
                 R.id.navigation_favourite -> {
-                    Log.d("dsds", "sd")
                     viewPager.currentItem = 2
 
                 }

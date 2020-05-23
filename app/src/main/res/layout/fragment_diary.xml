@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
-        android:background="@color/color_dark2"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize">
+        android:layout_height="?actionBarSize"
+        android:background="@color/color_dark2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,6 +26,7 @@
                 android:textColorHint="@color/color_white" />
 
             <TextView
+                android:id="@+id/notification_bell"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -38,14 +38,19 @@
 
 
     </androidx.appcompat.widget.Toolbar>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+    </androidx.core.widget.NestedScrollView>
     <include layout="@layout/layout_story" />
 
     <include layout="@layout/layout_create_post" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:background="@color/color_dark"
-        android:layout_marginTop="@dimen/margin10"
+        android:id="@+id/recyclerPosts"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin10"
+        android:background="@color/color_dark" />
 </LinearLayout>

@@ -2,6 +2,7 @@
   <dictionary name="pro">
     <words>
       <w>edittext</w>
+      <w>fullname</w>
     </words>
   </dictionary>
 </component>

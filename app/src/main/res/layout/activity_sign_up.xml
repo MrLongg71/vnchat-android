@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     tools:context=".src.module.sign_up.view.SignUpActivity">
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_SignIn"
+            android:id="@+id/toolbar_SignUp"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             app:navigationIcon="@drawable/ic_arrow_back_black_24dp"

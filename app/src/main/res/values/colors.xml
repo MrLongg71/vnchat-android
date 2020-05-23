@@ -9,5 +9,7 @@
     <color name="color_gray2">#4F9C9B9B</color>
     <color name="color_blue">#0573ff</color>
     <color name="color_white">#DDFFFFFF</color>
+    <color name="color_test1">#9FA5A4A4</color>
+    <color name="color_test">#D5382955</color>
 
 </resources>

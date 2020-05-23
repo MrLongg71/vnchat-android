@@ -5,7 +5,6 @@ import java.lang.annotation.Annotation;
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
 import retrofit2.Response;
-import vn.mrlongg71.vnchat.src.network.APIVnChat
 
 //
 //object ErrorUtils {
