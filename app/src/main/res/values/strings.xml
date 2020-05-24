@@ -29,4 +29,5 @@
     <string name="add_check_in">Check in</string>
     <string name="add_feel">Cảm xúc/Hoạt động</string>
     <string name="limits">Quyền xem</string>
+    <string name="have_err">Có lỗi xảy ra!!</string>
 </resources>

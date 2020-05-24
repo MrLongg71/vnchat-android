@@ -1,13 +1,13 @@
 package vn.mrlongg71.vnchat.src.module.diary.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_diary.*
 import kotlinx.android.synthetic.main.fragment_diary.view.*
 import kotlinx.android.synthetic.main.layout_footer_posts.view.*
@@ -26,7 +26,8 @@ import vn.mrlongg71.vnchat.src.network.EndPoint
  * A simple [Fragment] subclass.
  */
 class DiaryFragment : Fragment(), IOnClickEventPosts {
-    private val postsViewModel: PostsViewModel by viewModel()
+    private val getPostsViewModel: PostsViewModel.GetPosts by viewModel()
+    private val actionLikeViewModel: PostsViewModel.ActionLike by viewModel()
     private var postAdapter: PostsAdapter? = null
     private var storyAdapter: StoryAdapter? = null
 
@@ -38,7 +39,7 @@ class DiaryFragment : Fragment(), IOnClickEventPosts {
         val view: View = inflater.inflate(R.layout.fragment_diary, container, false)
 
 
-        postsViewModel.handlerGetPosts().observe(viewLifecycleOwner, Observer {
+        getPostsViewModel.handlerGetPosts().observe(viewLifecycleOwner, Observer {
             postAdapter = PostsAdapter(it!!, this)
 
             recyclerPosts.layoutManager = LinearLayoutManager(activity)
@@ -82,6 +83,14 @@ class DiaryFragment : Fragment(), IOnClickEventPosts {
             posts.isLike = false
             posts.likeCount = (posts.likeCount.toInt() - 1).toString()
             postAdapter!!.notifyDataSetChanged()
+            actionLikeViewModel.handlerUnLikePosts(posts.idPost, "31").observe(this, Observer {
+                if (it != 200) Toasty.warning(
+                    requireActivity(),
+                    getString(R.string.have_err),
+                    Toasty.LENGTH_LONG
+                ).show()
+            })
+
         } else {
             view.btnLikePost.setCompoundDrawablesWithIntrinsicBounds(
                 R.drawable.ic_heart,
@@ -92,8 +101,13 @@ class DiaryFragment : Fragment(), IOnClickEventPosts {
             posts.likeCount = (posts.likeCount.toInt() + 1).toString()
             posts.isLike = true
             postAdapter!!.notifyDataSetChanged()
-
-
+            actionLikeViewModel.handlerLikePosts(posts.idPost, "31").observe(this, Observer {
+                if (it != 200) Toasty.warning(
+                    requireActivity(),
+                    getString(R.string.have_err),
+                    Toasty.LENGTH_LONG
+                ).show()
+            })
         }
     }
 

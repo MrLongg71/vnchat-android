@@ -23,12 +23,15 @@ interface IAPIVnChat {
     @GET("posts/paging-post.php")
     fun handlerGetPosts(): Call<BaseResponse<List<Posts>>>
 
+    @FormUrlEncoded
     @POST("posts/action-like.php")
     fun handlerLike(
         @Field("idPost") idPost: String,
         @Field("idUser") idUser: String
     ): Call<BaseResponse<String>>
-    @POST("posts/action-like.php")
+
+    @FormUrlEncoded
+    @POST("posts/action-un-like.php")
     fun handlerUnLike(
         @Field("idPost") idPost: String,
         @Field("idUser") idUser: String

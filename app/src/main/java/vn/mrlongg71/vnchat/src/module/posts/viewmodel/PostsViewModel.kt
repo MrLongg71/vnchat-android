@@ -11,50 +11,77 @@ import vn.mrlongg71.vnchat.src.data.model.BaseResponse
 import vn.mrlongg71.vnchat.src.data.model.Posts
 import vn.mrlongg71.vnchat.src.data.repository.posts.PostsRepository
 
-class PostsViewModel(private val bookRepository: PostsRepository) : ViewModel(),
-    Callback<BaseResponse<List<Posts>>> {
+class PostsViewModel(private val bookRepository: PostsRepository) : ViewModel() {
 
-    private val _isLoading = MutableLiveData<Boolean>()
-    val isLoading: LiveData<Boolean>
-        get() = _isLoading
+    class GetPosts(private val postsRepository: PostsRepository) : ViewModel(),
+        Callback<BaseResponse<List<Posts>>> {
 
-    private val posts = MutableLiveData<List<Posts>>()
-    private val like = MutableLiveData<String>()
+        private val _isLoading = MutableLiveData<Boolean>()
+        val isLoading: LiveData<Boolean>
+            get() = _isLoading
 
-    fun handlerGetPosts(): LiveData<List<Posts>> {
-        _isLoading.value = true
-        bookRepository.getPosts().enqueue(this)
-        return posts
-    }
+        private val posts = MutableLiveData<List<Posts>>()
 
-    //    fun handlerLikePosts(idPost:String,idUser: String): LiveData<BaseResponse<String>> {
-//        bookRepository.actionLike(idPost,idUser)
-//    }
-//    fun handlerUnLikePosts(idPost:String,idUser: String): LiveData<BaseResponse<String>> {
-//        bookRepository.actionUnLike(idPost,idUser)
-//        return like
-//    }
-    override fun onFailure(call: Call<BaseResponse<List<Posts>>>, t: Throwable) {
-        Log.d("LONgKUTE", "fail: ${t.message} ");
-
-        // handle error
-        _isLoading.value = false
-
-        // posts.value = BaseResponse(500, t.message.toString(), null)
-    }
-
-    override fun onResponse(
-        call: Call<BaseResponse<List<Posts>>>,
-        response: Response<BaseResponse<List<Posts>>>
-    ) {
-        if (response.isSuccessful) {
-            posts.value = response.body()!!.data
-        } else {
-            // handle error
-//            posts.value = response.body()!!.data
-            Log.d("LONgKUTE", ":err ");
+        fun handlerGetPosts(): LiveData<List<Posts>> {
+            _isLoading.value = true
+            postsRepository.getPosts().enqueue(this)
+            return posts
         }
-        _isLoading.value = false
+
+        override fun onFailure(call: Call<BaseResponse<List<Posts>>>, t: Throwable) {
+            Log.d("LONgKUTE", "fail: ${t.message} ");
+
+            // handle error
+            _isLoading.value = false
+        }
+
+        override fun onResponse(
+            call: Call<BaseResponse<List<Posts>>>,
+            response: Response<BaseResponse<List<Posts>>>
+        ) {
+            if (response.isSuccessful) {
+                posts.value = response.body()!!.data
+            } else {
+                // handle error
+                   posts.value = response.body()!!.data
+            }
+            _isLoading.value = false
+        }
     }
+
+    class ActionLike(private val postsRepository: PostsRepository) : ViewModel(),
+        Callback<BaseResponse<String>> {
+        private val like = MutableLiveData<Int>()
+
+
+        fun handlerLikePosts(idPost: String, idUser: String): LiveData<Int> {
+            postsRepository.actionLike(idPost, idUser).enqueue(this)
+            return like
+        }
+
+        fun handlerUnLikePosts(idPost: String, idUser: String): LiveData<Int> {
+            postsRepository.actionUnLike(idPost, idUser).enqueue(this)
+            return like
+        }
+
+        override fun onFailure(call: Call<BaseResponse<String>>, t: Throwable) {
+            Log.d("LONgKUTE", "fail: ${t.message} ");
+        }
+
+        override fun onResponse(
+            call: Call<BaseResponse<String>>,
+            response: Response<BaseResponse<String>>
+        ) {
+            if (response.isSuccessful) {
+                like.value = response.body()!!.statusCode
+            } else {
+                // handle error
+                like.value = response.body()!!.statusCode
+                Log.d("LONgKUTE", ":err ");
+            }
+        }
+    }
+
+
 }
 

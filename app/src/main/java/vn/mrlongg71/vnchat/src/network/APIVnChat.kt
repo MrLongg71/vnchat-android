@@ -20,6 +20,12 @@ val viewModelModule = module {
     viewModel {
         PostsViewModel(get())
     }
+    viewModel {
+        PostsViewModel.GetPosts(get())
+    }
+    viewModel {
+        PostsViewModel.ActionLike(get())
+    }
 }
 
 val repositoryModule = module {
