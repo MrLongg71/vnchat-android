@@ -64,7 +64,7 @@ val retrofitModule = module {
 
     fun provideRetrofit(factory: Gson, client: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://192.168.1.8/vnchat-backend-php/server/api/")
+            .baseUrl("http://192.168.1.7/vnchat-backend-php/server/api/")
             .addConverterFactory(GsonConverterFactory.create(factory))
             .client(client)
             .build()

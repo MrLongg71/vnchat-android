@@ -1,5 +1,6 @@
 package vn.mrlongg71.vnchat.src.ui
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -39,6 +40,7 @@ class BottomNavigationActivity : AppCompatActivity() {
         viewPager = findViewById(R.id.viewNavigation)
         val navigation: BottomNavigationView = findViewById(R.id.navigation)
 
+        navigation.backgroundTintList =null
 
         navigation.setOnNavigationItemSelectedListener(
             mOnNavigationItemSelectedListener

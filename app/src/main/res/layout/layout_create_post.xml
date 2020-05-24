@@ -1,93 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="@dimen/margin10"
-    android:layout_marginTop="@dimen/margin10"
-    app:cardBackgroundColor="@color/color_test1">
+    app:cardBackgroundColor="@color/color_test1"
+    app:cardCornerRadius="@dimen/margin100">
 
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="10">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin10"
             android:orientation="horizontal"
-            android:weightSum="10">
+            android:paddingTop="@dimen/margin10">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_image"
-                android:layout_width="0dp"
-                android:layout_height="56dp"
-                android:layout_weight="2"
-                android:src="@drawable/logo"
-                app:civ_border_color="#FF000000"
-                app:civ_border_width="2dp" />
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_plus" />
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="7"
                 android:background="@null"
                 android:hint="@string/how_are_you"
                 android:padding="@dimen/margin10"
                 android:textColorHint="@color/color_white" />
-
         </LinearLayout>
+
+
         <View
-            android:layout_marginTop="@dimen/margin10"
-            android:background="@color/color_gray2"
             android:layout_width="match_parent"
-            android:layout_height="1dp"/>
-        <LinearLayout
-            android:paddingBottom="@dimen/margin10"
-
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="@dimen/margin15"
+            android:layout_height="1dp"
             android:layout_marginTop="@dimen/margin10"
-            android:layout_weight="9"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:drawableStart="@drawable/ic_search"
-                android:drawablePadding="@dimen/margin5"
-                android:text="@string/up_image"
-                android:textColor="@color/color_white"
-                tools:ignore="NestedWeights" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:drawableStart="@drawable/ic_search"
-
-                android:drawablePadding="@dimen/margin5"
-                android:text="@string/up_video"
-
-                android:textColor="@color/color_white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:drawableStart="@drawable/ic_search"
-                android:drawablePadding="@dimen/margin5"
-                android:text="@string/up_background"
-                android:textColor="@color/color_white" />
-
-        </LinearLayout>
-
+            android:background="@color/color_gray2" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
+
+
+
+
+

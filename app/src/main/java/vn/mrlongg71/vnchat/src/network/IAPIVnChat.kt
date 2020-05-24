@@ -1,7 +1,10 @@
 package vn.mrlongg71.vnchat.src.network
 
 import retrofit2.Call
-import retrofit2.http.*
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
+import retrofit2.http.POST
 import vn.mrlongg71.vnchat.src.data.model.BaseResponse
 import vn.mrlongg71.vnchat.src.data.model.Posts
 import vn.mrlongg71.vnchat.src.data.model.User
@@ -20,5 +23,14 @@ interface IAPIVnChat {
     @GET("posts/paging-post.php")
     fun handlerGetPosts(): Call<BaseResponse<List<Posts>>>
 
-
+    @POST("posts/action-like.php")
+    fun handlerLike(
+        @Field("idPost") idPost: String,
+        @Field("idUser") idUser: String
+    ): Call<BaseResponse<String>>
+    @POST("posts/action-like.php")
+    fun handlerUnLike(
+        @Field("idPost") idPost: String,
+        @Field("idUser") idUser: String
+    ): Call<BaseResponse<String>>
 }

@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_margin="@dimen/margin10"
-    android:background="@color/color_dark"
+<FrameLayout
+    android:layout_margin="@dimen/margin5"
+    android:background="@color/color_black_trans"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="230dp"
+    android:layout_height="160dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/roundImageStory"
         app:riv_corner_radius="@dimen/margin10"
-        android:background="@color/colorAccent"
-        android:layout_width="150dp"
-        android:layout_height="187dp"/>
+        android:adjustViewBounds="true"
+        android:layout_width="100dp"
+        android:scaleType="centerCrop"
+        android:layout_height="160dp"/>
+    <TextView
+        android:layout_gravity="bottom"
+        android:background="@color/color_black_trans"
+        android:layout_width="100dp"
+        android:layout_height="20dp"/>
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:src="@drawable/logo"
-        android:layout_marginBottom="@dimen/margin35"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/test"
         android:layout_gravity="bottom|center"
         app:civ_border_width="2dp"
-        app:civ_border_color="#FF000000"/>
-    <TextView
-        android:text="dcdcdcd"
-        android:layout_marginBottom="@dimen/margin10"
-        android:layout_gravity="bottom|center"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/text15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:civ_border_color="@color/color_white"/>
+
 
 </FrameLayout>

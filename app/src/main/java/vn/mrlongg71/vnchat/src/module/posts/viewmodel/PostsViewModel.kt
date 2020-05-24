@@ -19,6 +19,7 @@ class PostsViewModel(private val bookRepository: PostsRepository) : ViewModel(),
         get() = _isLoading
 
     private val posts = MutableLiveData<List<Posts>>()
+    private val like = MutableLiveData<String>()
 
     fun handlerGetPosts(): LiveData<List<Posts>> {
         _isLoading.value = true
@@ -26,11 +27,19 @@ class PostsViewModel(private val bookRepository: PostsRepository) : ViewModel(),
         return posts
     }
 
+    //    fun handlerLikePosts(idPost:String,idUser: String): LiveData<BaseResponse<String>> {
+//        bookRepository.actionLike(idPost,idUser)
+//    }
+//    fun handlerUnLikePosts(idPost:String,idUser: String): LiveData<BaseResponse<String>> {
+//        bookRepository.actionUnLike(idPost,idUser)
+//        return like
+//    }
     override fun onFailure(call: Call<BaseResponse<List<Posts>>>, t: Throwable) {
         Log.d("LONgKUTE", "fail: ${t.message} ");
 
         // handle error
         _isLoading.value = false
+
         // posts.value = BaseResponse(500, t.message.toString(), null)
     }
 
@@ -42,7 +51,8 @@ class PostsViewModel(private val bookRepository: PostsRepository) : ViewModel(),
             posts.value = response.body()!!.data
         } else {
             // handle error
-            posts.value = response.body()!!.data
+//            posts.value = response.body()!!.data
+            Log.d("LONgKUTE", ":err ");
         }
         _isLoading.value = false
     }

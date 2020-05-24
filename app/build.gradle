@@ -90,5 +90,8 @@ dependencies {
     def okhttp_version = "4.2.2"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
 
+    implementation 'jp.wasabeef:glide-transformations:4.1.0'
+
+
 
 }

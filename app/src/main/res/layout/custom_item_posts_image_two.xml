@@ -1,142 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/color_dark"
-    android:orientation="vertical">
+    android:layout_marginTop="@dimen/margin10"
+    android:padding="@dimen/margin10"
+    app:cardCornerRadius="@dimen/margin15">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="@dimen/margin10"
-        android:weightSum="10">
+        android:background="@color/color_test123"
+        android:orientation="vertical">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_image"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_weight="2"
-            android:src="@drawable/logo"
-            app:civ_border_color="#FF000000"
-            app:civ_border_width="2dp" />
+        <include layout="@layout/layout_header_posts"/>
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/margin10">
 
             <TextView
-                style="@style/TextView"
+                android:id="@+id/txtDescImageTwo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nguyễn Hoàng Long" />
+                android:text="Trang thai"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/text20" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="4 phút"
-                android:textColor="@color/color_white" />
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:drawableEnd="@drawable/ic_more" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/margin10">
-
-        <TextView
-            android:id="@+id/txtDescImageTwo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Trang thai"
-            android:textColor="@color/color_white"
-            android:textSize="@dimen/text20" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="@dimen/margin15"
-            android:orientation="horizontal"
-            android:weightSum="10">
-
-            <ImageView
-                android:id="@+id/img1ImageTwo"
-                android:layout_width="0dp"
                 android:layout_height="200dp"
-                android:layout_weight="5"
-                android:contentDescription="Image One Posts"
-                android:scaleType="centerCrop"
-                android:src="@drawable/test"
-                tools:ignore="HardcodedText" />
+                android:layout_marginTop="@dimen/margin15"
+                android:orientation="horizontal"
+                android:weightSum="10">
 
-            <ImageView
-                android:id="@+id/img2ImageTwo"
-                android:layout_width="0dp"
-                android:layout_height="200dp"
-                android:layout_marginStart="@dimen/margin5"
-                android:layout_weight="5"
-                android:contentDescription="Image One Posts"
-                android:scaleType="centerCrop"
-                android:src="@drawable/test"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/img1ImageTwo"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="5"
+                    android:contentDescription="Image One Posts"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/test"
+                    tools:ignore="HardcodedText" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="@dimen/margin10"
-            android:background="@color/color_gray2" />
+                <ImageView
+                    android:id="@+id/img2ImageTwo"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="@dimen/margin5"
+                    android:layout_weight="5"
+                    android:contentDescription="Image One Posts"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/test"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin10"
-            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/btnLikePost"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin10"
-                android:drawableStart="@drawable/ic_message"
-                android:drawablePadding="@dimen/margin10"
-                android:text="3"
-                android:textColor="@color/color_white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/btnCommentPost"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin35"
-                android:drawableStart="@drawable/ic_message"
-                android:drawablePadding="@dimen/margin10"
-                android:text="3"
-                android:textColor="@color/color_white"
-                app:layout_constraintStart_toEndOf="@+id/btnLikePost"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="1dp" />
+            <include layout="@layout/layout_footer_posts"/>
 
 
         </LinearLayout>
 
 
     </LinearLayout>
-
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>

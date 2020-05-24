@@ -9,7 +9,11 @@
     <color name="color_gray2">#4F9C9B9B</color>
     <color name="color_blue">#0573ff</color>
     <color name="color_white">#DDFFFFFF</color>
-    <color name="color_test1">#9FA5A4A4</color>
-    <color name="color_test">#D5382955</color>
+    <color name="color_black_trans">#40000000</color>
+    <color name="color_test1">#12C6C6C6</color>
+    <color name="color_test123">#F5291735</color>
+    <color name="color_test">#D64B0082</color>
+    <color name="color_test2">#1D0F27</color>
+    <color name="color_test3">#291735</color>
 
 </resources>

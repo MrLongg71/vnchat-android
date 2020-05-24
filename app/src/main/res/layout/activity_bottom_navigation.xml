@@ -2,7 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
-    android:background="@color/color_test"
+    android:background="@color/color_test3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -26,10 +26,9 @@
             android:id="@+id/navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:itemRippleColor="@null"
             android:layout_gravity="bottom"
-            android:visibility="visible"
-            android:background="?android:attr/windowBackground"
-            android:foreground="?attr/selectableItemBackground"
+            android:background="@color/color_test2"
             app:menu="@menu/bottom_navigation" />
 
     </FrameLayout>

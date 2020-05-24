@@ -5,10 +5,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_dark"
     tools:context=".src.module.menu.view.MessageFragment">
     <androidx.appcompat.widget.Toolbar
-        android:background="@color/color_dark2"
+        android:background="@color/color_test3"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize">
 

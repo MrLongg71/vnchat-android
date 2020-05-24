@@ -2,17 +2,17 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@color/color_dark"
     android:orientation="vertical"
     android:layout_height="wrap_content">
-    <TextView
-        android:layout_margin="@dimen/margin10"
-        android:text="@string/story"
-        style="@style/TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+<!--    <TextView-->
+<!--        android:layout_margin="@dimen/margin10"-->
+<!--        android:text="@string/story"-->
+<!--        style="@style/TextView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"/>-->
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerStory"
         android:layout_margin="@dimen/margin10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

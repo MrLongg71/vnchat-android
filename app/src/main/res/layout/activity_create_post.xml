@@ -2,15 +2,16 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/color_test123"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".src.module.posts.view.CreatePostActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_dark"
+        android:background="@color/color_test1"
         android:orientation="vertical"
-        tools:context=".src.module.posts.view.CreatePostActivity">
+        >
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
