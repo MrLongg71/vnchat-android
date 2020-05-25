@@ -30,4 +30,7 @@
     <string name="add_feel">Cảm xúc/Hoạt động</string>
     <string name="limits">Quyền xem</string>
     <string name="have_err">Có lỗi xảy ra!!</string>
+    <string name="man">Nam</string>
+    <string name="woman">Nữ</string>
+    <string name="diff">Khác</string>
 </resources>

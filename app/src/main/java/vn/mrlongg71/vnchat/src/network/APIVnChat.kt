@@ -9,11 +9,15 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import vn.mrlongg71.vnchat.src.data.repository.posts.PostsRepository
-import vn.mrlongg71.vnchat.src.data.repository.user.SignInRepository
+import vn.mrlongg71.vnchat.src.data.repository.user.UserRepository
 import vn.mrlongg71.vnchat.src.module.posts.viewmodel.PostsViewModel
 import vn.mrlongg71.vnchat.src.module.sign_in.viewmodel.SignInViewModel
+import vn.mrlongg71.vnchat.src.module.sign_up.viewmodel.SignUpViewModel
 
 val viewModelModule = module {
+    viewModel {
+        SignUpViewModel(get())
+    }
     viewModel {
         SignInViewModel(get())
     }
@@ -30,7 +34,7 @@ val viewModelModule = module {
 
 val repositoryModule = module {
     single {
-        SignInRepository(get())
+        UserRepository(get())
     }
     single {
         PostsRepository(get())

@@ -1,4 +1,4 @@
-package vn.mrlongg71.vnchat.src.module.sign_in.viewmodel
+package vn.mrlongg71.vnchat.src.module.sign_up.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,7 +10,7 @@ import vn.mrlongg71.vnchat.src.data.model.BaseResponse
 import vn.mrlongg71.vnchat.src.data.model.User
 import vn.mrlongg71.vnchat.src.data.repository.user.UserRepository
 
-class SignInViewModel(private val userRepository: UserRepository) : ViewModel(),
+class SignUpViewModel(private val userRepository: UserRepository) : ViewModel(),
     Callback<BaseResponse<User>> {
 
     private val _isLoading = MutableLiveData<Boolean>()
@@ -19,9 +19,14 @@ class SignInViewModel(private val userRepository: UserRepository) : ViewModel(),
 
     private val _user = MutableLiveData<BaseResponse<User>>()
 
-    fun handlerSignIn(email: String, password: String): LiveData<BaseResponse<User>> {
+    fun handlerSignUp(
+        phone: String,
+        name: String,
+        gender: String,
+        password: String
+    ): LiveData<BaseResponse<User>> {
         _isLoading.value = true
-        userRepository.signIn(email, password).enqueue(this)
+        userRepository.signUp(phone,name, gender, password).enqueue(this)
         return _user
     }
 
@@ -44,7 +49,5 @@ class SignInViewModel(private val userRepository: UserRepository) : ViewModel(),
         _isLoading.value = false
     }
 }
-
-
 
 

@@ -2,50 +2,45 @@
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@color/color_test1"
+    app:cardBackgroundColor="@color/color_gray_trans"
     app:cardCornerRadius="@dimen/margin100">
 
     <LinearLayout
+        android:paddingTop="@dimen/margin10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-
         android:gravity="center"
         android:orientation="vertical"
         android:weightSum="10">
 
-        <LinearLayout
+
+        <Button
+            android:id="@+id/actionCreatePosts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="@dimen/margin10">
-
-            <ImageView
-                android:layout_width="38dp"
-                android:layout_height="28dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_plus" />
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@null"
-                android:hint="@string/how_are_you"
-                android:padding="@dimen/margin10"
-                android:textColorHint="@color/color_white" />
-        </LinearLayout>
-
-
+            android:layout_gravity="center"
+            android:background="@null"
+            android:gravity="left|center"
+            android:drawableStart="@drawable/ic_plus"
+            android:drawablePadding="@dimen/margin5"
+            android:hint="@string/how_are_you"
+            android:padding="@dimen/margin10"
+            android:textColorHint="@color/color_white"
+            tools:ignore="RtlHardcoded" />
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="@dimen/margin10"
             android:background="@color/color_gray2" />
-
     </LinearLayout>
+
+
+
+
 </androidx.cardview.widget.CardView>
 
 

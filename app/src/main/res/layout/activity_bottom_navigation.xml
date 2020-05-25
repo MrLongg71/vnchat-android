@@ -2,7 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
-    android:background="@color/color_test3"
+    android:background="@color/color_dart_bright_violet"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             app:itemRippleColor="@null"
             android:layout_gravity="bottom"
-            android:background="@color/color_test2"
+            android:background="@color/color_dark_violet"
             app:menu="@menu/bottom_navigation" />
 
     </FrameLayout>

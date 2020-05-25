@@ -1,5 +1,6 @@
 package vn.mrlongg71.vnchat.src.module.diary.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_diary.*
 import kotlinx.android.synthetic.main.fragment_diary.view.*
+import kotlinx.android.synthetic.main.layout_create_post.view.*
 import kotlinx.android.synthetic.main.layout_footer_posts.view.*
 import kotlinx.android.synthetic.main.layout_story.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -19,6 +21,7 @@ import vn.mrlongg71.vnchat.src.adapter.StoryAdapter
 import vn.mrlongg71.vnchat.src.data.model.Images
 import vn.mrlongg71.vnchat.src.data.model.Posts
 import vn.mrlongg71.vnchat.src.module.diary.interfacePosts.IOnClickEventPosts
+import vn.mrlongg71.vnchat.src.module.posts.view.CreatePostActivity
 import vn.mrlongg71.vnchat.src.module.posts.viewmodel.PostsViewModel
 import vn.mrlongg71.vnchat.src.network.EndPoint
 
@@ -66,11 +69,18 @@ class DiaryFragment : Fragment(), IOnClickEventPosts {
 
         storyAdapter!!.notifyDataSetChanged()
 
+        onEvent(view)
+
 
         return view
 
     }
 
+    private fun onEvent(view: View) {
+        view.actionCreatePosts.setOnClickListener {
+            startActivity(Intent(activity, CreatePostActivity::class.java))
+        }
+    }
 
     override fun actionLike(view: View, posts: Posts) {
         if (posts.isLike) {
@@ -109,10 +119,6 @@ class DiaryFragment : Fragment(), IOnClickEventPosts {
                 ).show()
             })
         }
-    }
-
-    override fun actionUnLike(view: View, idPost: String, isLike: Boolean) {
-        TODO("Not yet implemented")
     }
 
 

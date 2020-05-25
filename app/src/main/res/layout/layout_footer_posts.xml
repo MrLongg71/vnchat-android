@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin10"
-                android:drawableStart="@drawable/ic_unheart"
+                android:drawableStart="@drawable/anim_heart"
                 android:textColor="@color/color_white" />
 
             <TextView

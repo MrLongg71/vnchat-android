@@ -18,6 +18,16 @@ interface IAPIVnChat {
         @Field("password") password: String?
     ): Call<BaseResponse<User>>
 
+    @FormUrlEncoded
+    @POST("users/sign-up.php")
+    fun handlerSignUp(
+        @Field("phone") phone: String?,
+        @Field("fullname") name: String?,
+        @Field("gender") gender: String?,
+        @Field("password") password: String?
+    ): Call<BaseResponse<User>>
+
+
 
     //posts
     @GET("posts/paging-post.php")

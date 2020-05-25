@@ -26,12 +26,12 @@ class CreatePostActivity : AppCompatActivity() {
 //                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
 //            }
 //        }
-        this.window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
-        )
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
-                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+//        this.window.setFlags(
+//            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//            WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
+//        )
+//        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
+//                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
 
 
         val bottomSheetBehavior = BottomSheetBehavior.from(bottom_sheet)

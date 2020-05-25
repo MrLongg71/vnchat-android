@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/color_white</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:statusBarColor">@color/color_test3</item>
+        <item name="android:statusBarColor">@color/color_dark_violet</item>
     </style>
 
     <style name="TextButton" parent="Theme.AppCompat.Light.NoActionBar">

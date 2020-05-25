@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".src.module.menu.view.MessageFragment">
     <androidx.appcompat.widget.Toolbar
-        android:background="@color/color_test3"
+        android:background="@color/color_dark_violet"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize">
 

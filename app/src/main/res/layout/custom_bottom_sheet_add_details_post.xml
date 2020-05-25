@@ -5,66 +5,35 @@
     android:id="@+id/bottom_sheet"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/color_dark"
+    android:background="@color/color_dark_violet"
     android:orientation="vertical"
-    android:padding="16dp"
     app:behavior_hideable="false"
-    app:behavior_peekHeight="80dp"
+    app:behavior_peekHeight="70dp"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <ImageView
         android:id="@+id/img_arrow_up"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:contentDescription="Arrow Down"
         android:src="@drawable/ic_arrow_drop_up"
         tools:ignore="HardcodedText" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin5"
-        android:orientation="horizontal"
-        android:weightSum="10">
+
 
         <TextView
             style="@style/TextView2"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="6"
+            android:drawablePadding="@dimen/margin5"
+            android:gravity="center"
+            android:drawableStart="@drawable/ic_plus"
             android:text="@string/add_details_post"
             android:textColor="@color/color_white"
             android:textSize="@dimen/text15" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:gravity="right"
-            android:weightSum="4">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableStart="@drawable/ic_broken_image"
-                tools:ignore="NestedWeights" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableStart="@drawable/ic_mood" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableStart="@drawable/ic_person_place" />
-        </LinearLayout>
-
-    </LinearLayout>
 
     <TextView
         style="@style/TextView2"

@@ -11,7 +11,7 @@ import vn.mrlongg71.vnchat.src.data.model.BaseResponse
 import vn.mrlongg71.vnchat.src.data.model.Posts
 import vn.mrlongg71.vnchat.src.data.repository.posts.PostsRepository
 
-class PostsViewModel(private val bookRepository: PostsRepository) : ViewModel() {
+class PostsViewModel(private val postsRepository: PostsRepository) : ViewModel() {
 
     class GetPosts(private val postsRepository: PostsRepository) : ViewModel(),
         Callback<BaseResponse<List<Posts>>> {
